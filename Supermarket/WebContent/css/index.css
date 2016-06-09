@@ -1,0 +1,114 @@
+body{margin:0;padding:0;}
+.firsthead{
+	height:auto;
+    width: auto;
+	background:#CCF;
+}
+.showhead{
+	margin:0 auto;
+	text-align:center;
+    width: auto;
+    height: 450px;
+}
+.login{
+	line-height: 30px;
+	margin:0 auto;
+	text-align:center;
+    width: auto;
+    height: 150px;
+    background: white;
+}
+.login_part{
+	width: auto;
+    height: 40px;
+	margin:0 auto;
+}
+.login_part img{
+	vertical-align:middle;
+}
+.login input[type="password"]{
+	width: 150px;
+	height: 28px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.login input[type="password"]:hover,
+.login input[type="password"]:focus,
+.login input[type="password"]:active,
+.login select:hover,
+.login select:focus,
+.login select:active{
+	border-color:#263f56;
+	-webkit-box-shadow:0 0 10px rgba(255,204,0, .6);  
+	-moz-box-shadow:0 0 10px rgba(255,204,0, .6);  
+	box-shadow:0 0 10px rgba(42,63,170,1); 
+}
+.login select{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	margin-left:15px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.login input[type="text"]{
+	width: 150px;
+	height: 28px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.login input[type="text"]:hover,
+.login input[type="text"]:focus,
+.login input[type="text"]:active,
+.login select:hover,
+.login select:focus,
+.login select:active{
+	border-color:#263f56;
+	-webkit-box-shadow:0 0 5px rgba(255,204,0, .6);  
+	-moz-box-shadow:0 0 5px rgba(255,204,0, .6);  
+	box-shadow:0 0 5px rgba(42,63,170,1); 
+}
+.login select{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.button{
+	padding: 4px 8px;
+	color: #263f56;
+	border:1px solid #263f56;
+	border-radius: 5px;
+	background-color: #fff;
+	cursor: pointer;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.button:hover{
+	color: #FFF;
+	background-color:#263f56;
+}
