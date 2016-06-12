@@ -1,0 +1,273 @@
+/* CSS Document */
+.header1,ul,li{margin:0;padding:0;}
+ul{list-style: none;}
+/*个人信息*/
+.header1{
+	width:100%;
+	margin:auto;
+}
+.headimg{
+	width:600px;
+	margin:auto;
+}
+.header2{
+	width:100%;
+	height:90px;
+	background:#1B1B1B;
+	margin:0 auto;
+	z-index:9999;
+	text-align:center;
+}
+.header2-content{
+	width:440px;
+	margin:auto;
+	float:center;
+}
+.header2-content a{
+	float:left;
+	width:220px;
+	height:50px;
+	line-height:30px;
+	margin-top:15px;
+	text-align:center;
+	color:#FFF;
+	text-decoration:none;
+}
+.header2-content a:hover{	
+	color:#ffebc8;
+	text-decoration:none;
+}
+.staffmessage{
+	
+	width:230px;
+	height:450px;
+	margin:0 auto;
+	line-height:30px;
+}
+.staffmessage ul li{
+	line-height: 45px;
+	font-size:20px;
+	color:#1B1B1B;
+	line-height:60px;
+}
+.staffmessage1{
+	
+	width:230px;
+	height:450px;
+	margin:0 auto;
+	line-height:30px;
+}
+.staffmessage1 ul li{
+	line-height: 45px;
+	font-size:20px;
+	color:#1B1B1B;
+}
+.changekey{
+	width:250px;
+	height:480px;
+	margin:auto;
+	padding:1em 0;
+}
+.changekey ul li{
+	line-height: 60px;
+	font-size:20px;
+	color:#1B1B1B;
+}
+.changekey ul li button{
+	padding-left:50px;
+}
+.staffimg{
+	margin-left:250px;
+}
+/*商品信息查询*/
+.com-search{
+	width:600px;
+	margin:0 auto 0;
+	padding-left: 50px;
+	text-align: center;
+	line-height: 30px;
+}
+.title11{
+		height: 40px;
+		margin: 0 260px;
+		color:#1B1B1B;
+		font-size: 17px;
+		font-weight:500;
+	}
+	.title{
+		height: 40px;
+		margin:0 auto 0;
+		color:#1B1B1B;
+		font-size: 17px;
+		font-weight:500;
+	}
+	.title1{
+		width: 100px;
+		float: left;
+	}
+	.title2{
+		width: 100px;
+		float: left;
+	}
+	.title3{
+		width: 100px;
+		float: left;
+	}
+	.title4{
+		width: 150px;
+		float: left;
+		margin-left:10px; 
+	}
+	.title5{
+		width: 100px;
+		float: left;
+	}
+	.title6{
+		width: 200px;
+		float: left;
+	}
+	.allsearch1{
+		width: 100%;
+		margin: 0 250px;
+	}
+	.allsearch{
+		width: 100%;
+	}
+	.controls2 input[type="text"]{
+	width: 80px;
+	height: 28px;
+	border-radius: 5px;
+	border:1px solid #555;
+	padding-left: 6px;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.controls2 input[type="text"]:hover,
+.controls2 input[type="text"]:focus,
+.controls2 input[type="text"]:active,
+.controls2 select:hover,
+.controls2 select:focus,
+.controls2 select:active{
+	border-color:#263f56;
+	-webkit-box-shadow:0 0 10px rgba(255,255,255,1);  
+	-moz-box-shadow:0 0 10px rgba(255,255,255,1);  
+	box-shadow:0 0 8px rgba(255,255,255,1); 
+}
+.controls2 select{
+	height: 30px;
+	width: 80px;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.title4 input[type="text"]{
+	margin-left: 10px;
+	width: 35px;
+	height: 28px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.title5 input[type="button"]{
+	margin-left: 40px;
+}
+.title6 input[type="button"]{
+	margin-top:20px;
+	margin-left:65px;
+}
+/*销售记录*/
+.change{
+	background:#F5F5F5;
+}
+.comsearch2{
+	width: 100%;
+	clear: both;
+	margin:10px auto;
+	text-align: left;
+}
+.comsearch2 form{
+	display: inline-block;
+	margin: 0 10px;
+}
+.comsearch2 form input[type="text"]{
+	border-radius: 5px;
+	border:1px solid #263f56;
+}
+.uk-datepicker{
+	margin-top: 290px;
+}
+.sale_print{
+	width:100%;
+	height:500px;
+	background:#F5F5F5;
+	margin:0 auto;
+}
+/*共用部分*/
+.mainstaff{
+	width:100%;
+	margin:auto;
+}
+.controls input[type="text"]{
+	width: 150px;
+	height: 28px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.controls input[type="text"]:hover,
+.controls input[type="text"]:focus,
+.controls input[type="text"]:active,
+.controls select:hover,
+.controls select:focus,
+.controls select:active{
+	border-color:#263f56;
+	-webkit-box-shadow:0 0 10px rgba(255,204,0, .6);  
+	-moz-box-shadow:0 0 10px rgba(255,255,255,1);  
+	box-shadow:0 0 5px rgba(255,255,255,1); 
+}
+.controls select{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 5px;
+	border:1px solid #555;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.button{
+	padding: 4px 8px;
+	color: #263f56;
+	border:1px solid #263f56;
+	border-radius: 5px;
+	background-color: #fff;
+	cursor: pointer;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.button:hover{
+	color: #FFF;
+	background-color:#263f56;
+}
