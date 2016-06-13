@@ -15,8 +15,8 @@
 管理员<input type="radio" name="identity" value="2">&nbsp;
 <input type="submit" value="点击"><br/>
 </form>
-<a href="SearchComed">员工销售查询</a><br/>
-<a href="InsertComed">员工新增销售</a><br/>
+<a href="SearchSale">员工销售查询</a><br/>
+<a href="InsertSale">员工新增销售</a><br/>
 <a href="SearchCom">商品查询</a><br/><br/>
 <form action="PswAlter" method="POST">
 账号：<input type="text" name="account"><br/>
@@ -24,5 +24,20 @@
 <input type="submit" value="点击"><br/><br/>
 <a href="StaffAlter">员工个人信息修改</a><br/>
 <a href="Staffself">员工个人信息展示</a><br/>
+<a href="StaffShow">员工信息查询</a><br/>
+<a href="StaffDelete">员工信息删除</a><br/>
+<a href="StaffInsert">员工信息插入</a><br/>
+<a href="InsertCom">商品信息插入</a><br/>
+<a href="ShowCom">商品信息展示</a><br/>
+<a href="DeleteCom">商品信息展示</a><br/>
+<a href="AlterCom">商品信息修改</a><br/>
+<a href="ShowSort">类别查询</a><br/>
+<a href="AlterSort">类别修改</a><br/>
+<a href="DeleteSort">类别删除</a><br/>
+<a href="InsertSort">类别插入</a><br/>
+<a href="InsertStock">进货</a><br/>
+<a href="ShowStock">查询进货信息</a><br/>
+<a href="InsertRestock">退货</a><br/>
+<a href="ShowRestock">查询进货信息</a><br/>
 </body>
 </html>
