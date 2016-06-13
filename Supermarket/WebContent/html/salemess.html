@@ -69,7 +69,7 @@
 				</div>
 			</div>
 	      </li>
-	  	  <li>
+	  	<!--  <li>
 	      <div class="controls2">
 			<div class="title6">
 	            员工编号：
@@ -85,7 +85,7 @@
 	            <label><input type="radio"  name="id_state" value="2">退货</label>
 	   		 	</div>
 	         </div>
-	      </li>
+	      </li>-->
 	 	  <li>
 	      	<div class="controls2">
 				<div class="title6">
@@ -94,14 +94,14 @@
 				</div>
 			</div>
 	       </li>
-	  	  <li>
+	  	<!--  <li>
 	      	<div class="title6">
 	        出售日期：<label for="id_saledate">1988-1-1</label>
 	        </div>
-	      </li>
+	      </li>-->
 		</ul>
         <div class="title6">
-        <input type="button" class="button" name="sure" value="修改">
+        <input type="button" class="button" name="sure" value="登记">
         </div>
 	</div>	
 	</li>
@@ -126,6 +126,7 @@
 
 				<div class="controls2 title3">
 		            <select name="id_sortno">
+                    <option>请选择</option>
 		      		<option>小吃</option>
 		      		<option>家具</option>
 		      		<option>衣物</option>
@@ -144,18 +145,21 @@
 			<br>
 		    <div class="comsearch2">
 			    <form class="uk-form">
-			    	售出日期：
-			    	<input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">
+			    	<span>售出时间：</span>
+                    <input type="radio"  name="id_saledate" value="1" checked="checked">今天
+		            <input type="radio"  name="id_saledate" value="2">近一个星期
+                    <input type="radio"  name="id_saledate" value="3">近一个月
+			    	<!--<input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">-->
 				</form>
 		        <form class="uk-form">
 			        <input type="checkbox" value="全部记录">
-			        全部商品
+			        <span>全部商品</span>
 		      	</form> 
 		    	<input type="button" class="button" name="sure" value="查询">
 		    </div>
 	    </div>
 	    <!--输出查询结果-->
-	    <div class="sale_print">
+	    <div class="sale_print" style="width:600px;height:450px">
 	    </div>
   	</li>
 </ul>
