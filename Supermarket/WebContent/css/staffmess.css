@@ -84,7 +84,8 @@ span{
 }
 /*商品信息查询*/
 .com-search{
-	width:600px;
+	border:solid 3px #000000;
+	width:530px;
 	margin:0 auto 0;
 	padding-left: 50px;
 	text-align: center;
@@ -103,6 +104,7 @@ span{
 		color:#1B1B1B;
 		font-size: 17px;
 		font-weight:500;
+		text-align: center;
 	}
 	.title1{
 		width: 100px;
@@ -191,6 +193,15 @@ span{
 	margin-top:20px;
 	margin-left:65px;
 }
+.com_print{
+	width:600px;
+	height:auto;
+	margin:30px auto;
+}
+.blank{
+	height:50px;
+	width:100%;
+}
 /*销售记录*/
 .change{
 	background:#F5F5F5;
@@ -213,10 +224,11 @@ span{
 	margin-top: 290px;
 }
 .sale_print{
-	width:100%;
+	width:520px;
 	height:500px;
 	background:#F5F5F5;
-	margin:0 auto;
+	margin:30px auto;
+	
 }
 /*共用部分*/
 .mainstaff{
