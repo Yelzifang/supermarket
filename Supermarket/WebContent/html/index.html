@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    <meta charset="UTF-8">
+    <title>超市管理系统</title>
+    <Script Language="JavaScript"></Script>
+ <script src="../js/login.js"></script>
+ <script src="../js/jquery-1.9.1.min.js"></script>
+
+
+</head>
+<body>
+<div class="firsthead">
+    <div class="showhead">
+    <br /><img src="../image/back.png" />
+    </div>
+    <div class="login">
+    <form    method="post"   action="">
+    <br />
+    <div class="login_part">
+        <img src="../image/账户.png" />
+        <input type="text" name="username" id="username"><br />
+    </div>
+    <div class="login_part">
+    	<img src="../image/passw.png" />
+        <input type="password" name="password" id="password"><br />
+    </div>
+    <div class="login_part">
+    <select id="identitys" name="identitys" style='width:70px;height:25px'>  
+                <option selected="selected">管理员</option>
+                <option >员工</option>
+    </select>
+       	&nbsp;&nbsp;<input type="button" class="button" value="登录" onclick="SendLoginRequest()"/>
+    </div>
+</form>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Magnetic - Stunning Responsive HTML5/CSS3 Photography Template</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website  template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/staffmess.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../ajax/salemess.js"></script>
+</head>
+<body>
+
+	<header>
+		<div class="logo">
+			<img src="../image/logo.png" title="market" alt="Market"/></a>
+		</div><!-- end logo -->
+
+		<div id="menu_icon"></div>
+		<nav>
+			<ul>
+				<li><a href="inner.html">个人信息</a></li>
+				<li><a href="commess.html">商品信息</a></li>
+				<li><a href="salemess.html">销售信息</a></li>
+			</ul>
+		</nav><!-- end navigation menu -->
+        </div>
+
+		<div class="footer clearfix">
+			<ul class="social clearfix">
+				<li><a href="index.html" class="fb" data-title="返回首页"></a></li>
+
+			</ul><!-- end social -->
+
+			<div class="rights">
+				<p>Copyright ©冯志宝 黄志康 洪佳桂 黄子芳</p>
+			</div><!-- end rights -->
+		</div ><!-- end footer -->
+	</header><!-- end header -->
+<!--标题图-->
+<div class="mainstaff">
+	<div class="header1">
+    	<div class="headimg">
+		<img src="../image/salemess.png" >
+        </div>
+	</div>    
+    
+	<div class="header2">
+    	<div class="header2-content">
+        <ul class="" data-uk-switcher="{connect:'#run'}">
+		<li><a href=""><h2>出售登记</h2></a></li>
+		<li><a href=""><h2>查询记录</h2></a></li>
+        </ul>
+        </div>
+	</div>
+<div class="change">
+<ul id="run" class="uk-switcher">
+	<!--出售登记-->
+	<li>    
+	<div class="staffmessage1" id="iDBody1">
+		<ul>
+	      <li>
+	      	<div class="controls2">
+				<div class="title6">
+	            商品编号：
+				<input type="text" name="id_comno" id="comno" placeholder="如：001">
+				</div>
+			</div>
+	      </li>
+	  	<!--  <li>
+	      <div class="controls2">
+			<div class="title6">
+	            员工编号：
+				<input type="text" name="id_stano" placeholder="如：001">
+			</div>
+			</div>
+	      </li>
+	  	  <li>
+	      	<div class="controls2">
+	            <div class="title6" id="id_state">
+	            销售状态：<br />
+	            <label><input type="radio"  name="id_state" value="1" checked="checked">已售出</label>
+	            <label><input type="radio"  name="id_state" value="2">退货</label>
+	   		 	</div>
+	         </div>
+	      </li>-->
+	 	  <li>
+	      	<div class="controls2">
+				<div class="title6">
+	            出售数量：
+				<input type="text" name="id_saleamount" id="saleamount" placeholder="如：13">
+				</div>
+			</div>
+	       </li>
+	  	<!--  <li>
+	      	<div class="title6">
+	        出售日期：<label for="id_saledate">1988-1-1</label>
+	        </div>
+	      </li>-->
+		</ul>
+        <div class="title6">
+        <input type="button" class="button" name="sure" id="record" value="登记">
+        </div>
+	</div>	
+	</li>
+    <!--查询记录-->
+	<li>
+		<div class="com-search">
+			<div class="title">
+				<label class="title1">销售编号</label>
+				<label class="title2">商品编号</label>
+				<label class="title3">商品类型</label>
+				<label class="title4">销售状态</label>
+			    <label class="title5">员工编号</label>
+			</div>
+			<div class="allsearch">
+				<div class="controls2 title1">
+					<input type="text" name="id_saleno" id="saleno" placeholder="如：001">
+				</div>
+
+				<div class="controls2 title2">
+					<input type="text" name="id_comno" id="salecomno" placeholder="如：001">
+				</div>
+
+				<div class="controls2 title3">
+		            <select name="id_sortno" id="salesortno">
+                    <option value="0">请选择</option>
+		      		<option value="1">小吃</option>
+		      		<option value="2">家具</option>
+		      		<option value="3">衣物</option>
+		      		<option value="4">玩具</option></select>
+		   		 </div>
+		    
+		    	<div class="controls2 title4">
+						<input type="radio"  name="id_state" value="1" checked="checked">已售出
+		            	<input type="radio"  name="id_state" value="2">退货
+		    	</div>
+				
+		        <div class="controls2 title5">
+					<input type="text" name="id_stano" placeholder="如：001">
+				</div>
+			</div> 
+			<br>
+		    <div class="comsearch2">
+			    <form class="uk-form">
+			    	<span>售出时间：</span>
+                    <input type="radio"  name="id_saledate" value="1" checked="checked">今天
+		            <input type="radio"  name="id_saledate" value="2">近一个星期
+                    <input type="radio"  name="id_saledate" value="3">近一个月
+			    	<!--<input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">-->
+				</form>
+		        <form class="uk-form">
+			        <input type="checkbox" id="saleall" value="全部记录">
+			        <span>全部商品</span>
+		      	</form> 
+		    	<input type="button" class="button" name="sure" id="saleseek" value="查询" onclick="createparameter()">
+		    </div>
+	    </div>
+	    <!--输出查询结果-->
+	    <div class="sale_print" style="width:600px;height:450px">
+	    </div>
+  	</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>	
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+<script type="text/javascript" src="../js/datepicker.js"></script>
+</body>
+</html>

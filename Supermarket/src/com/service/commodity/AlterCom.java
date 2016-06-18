@@ -2,11 +2,7 @@ package com.service.commodity;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,16 +17,16 @@ import org.json.JSONObject;
 import com.dao.DBO;
 
 /**
- * Servlet implementation class InsertComed
+ * Servlet implementation class AlterCom
  */
-@WebServlet("/InsertComed")
-public class InsertComed extends HttpServlet {
+@WebServlet("/AlterCom")
+public class AlterCom extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertComed() {
+    public AlterCom() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -51,14 +47,13 @@ public class InsertComed extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String stano = "3";//(String)session.getAttribute("stano");
 		String comno = "6";//request.getParameter("comno");
-		Date currDate = (Date) Calendar.getInstance().getTime();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String dateTime = sdf.format(currDate);
-		String saleamout = "500";//request.getParameter("saleamout");
+		String comname = "香辣鸡腿";//request.getParameter("comname");
+		String price = "8";//request.getParameter("price");
+		String sortno = "1";//request.getParameter("sortno");
+		String supno = "1";//request.getParameter("supno");
 		
-		String params[] = new String[]{comno,stano,dateTime,"1",saleamout};
+		String params[] = new String[]{comname,price,sortno,supno,comno};
 		
 		DBO db = new DBO();
 		int n = 0;
@@ -72,13 +67,13 @@ public class InsertComed extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			sql = new String("INSERT INTO sale(comno,stano,saledate,state,saleamount) VALUES(?,?,?,?,?)");
+			sql = new String("UPDATE commodity SET comname=?,price=?,sortno=?,supno=? WHERE comno=?");
 			n = db.executeUpdate(sql, params);
 			if(n!=0){
 				status = true;
-				detail = new String("插入成功！");
+				detail = new String("修改商品成功！");
 			}else{
-				detail = new String("插入失败！");
+				detail = new String("修改商品失败！");
 			}
 			json.put("status", status);
 			json.put("detail", detail);

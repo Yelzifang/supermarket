@@ -1,8 +1,7 @@
-package com.service.commodity;
+package com.service.staff;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -12,23 +11,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.dao.DBO;
 
 /**
- * Servlet implementation class SearchComed
+ * Servlet implementation class StaffInsert
  */
-@WebServlet("/SearchComed")
-public class SearchComed extends HttpServlet {
+@WebServlet("/StaffInsert")
+public class StaffInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchComed() {
+    public StaffInsert() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -49,56 +47,43 @@ public class SearchComed extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String stano = "1";//(String)session.getAttribute("stano");
-		String dateTime = null;//request.getParameter("saletime");
-		String saleamount = null;//request.getParameter("saleamount");
-		String params[] = null;
+		String username = "hhh";//request.getParameter("account");
+		String password = "123";//request.getParameter("pwd");
+		String name = "huazhka";//request.getParameter("name");
+		String sex = "2";//request.getParameter("sex");
+		String tele = "15016066772";//request.getParameter("tele");
+		String identity = "2";
+		String birthday = "1993-06-14";//request.getParameter("birthday");
+		String params[] = new String[]{username,password,name,sex,tele,identity,birthday};
 		
 		DBO db = new DBO();
-		ResultSet rs = null;
+		int n = 0;
 		String sql = null;
-
+		
 		JSONObject json = new JSONObject();
-		JSONArray js = new JSONArray();
+		JSONObject js = new JSONObject();
 		Boolean status = false;
 		String detail = null;
+		
 		try {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			if(dateTime==null&&saleamount==null){
-				params = new String[]{stano};
-				sql = new String("SELECT comname,saledate,state,saleamount FROM sale,commodity"+
-				" WHERE commodity.comno=sale.comno AND stano=?");
-			}else if(saleamount!=null){
-				params = new String[]{stano,saleamount};
-				sql = new String("SELECT comname,saledate,state,saleamount FROM sale,commodity"+
-				" WHERE commodity.comno=sale.comno AND stano=? AND saleamount>?");
-			}else{
-				params = new String[]{stano,dateTime};
-				sql = new String("");
-			}
-			rs = db.executeQuery(sql, params);
-			if(rs.next()){
-				status = true;
-				detail = new String("查询成功！");
-			}else{
-				detail = new String("查询失败！");
-			}
-			rs = db.executeQuery(sql, params);
-			while(rs.next()){
-				JSONObject temp = new JSONObject();
-				temp.put("comname", rs.getString(1));
-				temp.put("dateTime", rs.getDate(2).toString());
-				temp.put("state", rs.getInt(3));
-				temp.put("saleamount", rs.getInt(4));
-				js.put(temp);
-			}
-			json.put("status", status);
-			json.put("detail", detail);
-			json.put("message", js);
-			out.println(json.toString());
-			db.closeAll();
+			
+		sql = new String("INSERT INTO staff(account,pwd,staname,sex,tele,identity,birthday) VALUES(?,?,?,?,?,?,?)");
+		n = db.executeUpdate(sql, params);
+		if(n!=0){
+			status = true;
+			detail = new String("录入员工信息成功！");
+			
+		}else{
+			detail = new String("录入员工信息失败！");
+		}
+		json.put("status", status);
+		json.put("detail", detail);
+		json.put("message", js);
+		out.println(json.toString());
+		db.closeAll();
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException | SQLException | JSONException e) {
 			// TODO Auto-generated catch block
