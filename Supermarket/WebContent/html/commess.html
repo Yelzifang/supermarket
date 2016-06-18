@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../ajax/commess.js"></script>
 </head>
 <body>
 
@@ -45,32 +48,33 @@
     <!--查询条件-->
     <div class="comsearch">
 	<div class="title11">
-	<label class="title1">商品名称</label>
 	<label class="title2">商品编号</label>
+	<label class="title1">商品名称</label>
 	<label class="title3">商品类型</label>
 	<label class="title4">价格区间</label>
 	<label class="title5">
-        <input type="checkbox" value="全部商品">
+        <input type="checkbox" id="all" value="全部商品">
         全部商品
       </label>
 	</div>
 	<div class="allsearch1">
-		<div class="controls2">
-    		<div class="title1">
-			<input type="text" name="id_comname" placeholder="如：雨伞">
-			</div>
-		</div>
-
+		
 		<div class="controls2">
 			<div class="title2">
-			<input type="text" name="id_comno" placeholder="如：001">
+			<input type="text" name="id_comno" id="comno" placeholder="如：001">
+			</div>
+		</div>
+		
+		<div class="controls2">
+    		<div class="title1">
+			<input type="text" name="id_comname" id="comname" placeholder="如：雨伞">
 			</div>
 		</div>
 
 		<div class="controls2">
-            <select class="title3" name="id_sortno">
-            <option>请选择</option>
-      		<option>小吃</option>
+            <select class="title3" name="id_sortno" id="sortno">
+            <option value="0">请选择</option>
+      		<option value="1">小吃</option>
       		<option>家具</option>
       		<option>衣物</option>
       		<option>玩具</option></select>
@@ -78,14 +82,14 @@
     
     	<div class="controls2">
 			<div class="title4">
-				<input type="text" name="id_comno" placeholder="￥">
+				<input type="text" name="id_comno" id="price1" placeholder="￥">
 				-
-				<input type="text" name="id_comno" placeholder="￥">
+				<input type="text" name="id_comno" id="price2" placeholder="￥">
 			</div>
     	</div>
 
 		<div class="title5">
-    		<input type="button" class="button" name="sure" value="搜索">
+    		<input type="button" class="button" name="sure" id="seek" value="搜索" ">
     		</div>
     	</div>
 	</div>

@@ -49,10 +49,13 @@ public class ShowStock extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
+		String stockall = "tru";//request.getParameter("stockall");
+		String stono = "";//request.getParameter("stono");
 		String stano = "";//(String)session.getAttribute("stano");//个人进货查询
-		String time = "";//(String)request.getParameter("time");//按时间查询
 		String comno = "";//(String)request.getParameter("comno");//按商品查询
-		String stoamount = "";//(String)request.getParameter("stoamount");//按进货数量查询
+		String time = "3";//(String)request.getParameter("time");//按时间查询
+		String stoamount1 = "100";//(String)request.getParameter("stoamount1");//按进货数量查询
+		String stoamount2 = "1500";//(String)request.getParameter("stoamount2");//按进货数量查询
 		String params[] = null;
 		
 		DBO db = new DBO();
@@ -67,7 +70,34 @@ public class ShowStock extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			sql = new String("SELECT commodity.comname,staff.staname,stodate,stoamount FROM commodity,staff,stock WHERE commodity.comno=stock.comno AND staff.stano=stock.stano");
+			if(stockall.equals("true")){
+				sql = new String("SELECT commodity.comname,staff.staname,stodate,stoamount FROM commodity,staff,stock WHERE stock.comno=commodity.comno AND stock.stano=staff.stano");
+			}else if(!stono.equals("")){
+				sql = new String("SELECT commodity.comname,staff.staname,stodate,stoamount FROM commodity,staff,stock WHERE stock.comno=commodity.comno AND stock.stano=staff.stano AND stono="+stono);
+			}else{
+				String sql1="",sql2="",sql3="",sql4="",sql5="";
+				if(!stano.equals("")){
+					sql1=" AND stock.stano="+stano;
+				}
+				if(!comno.equals("")){
+						sql2=" AND stock.comno="+comno;
+				}
+				if(time.equals("1")){
+						sql3=" AND TO_DAYS(NOW()) - TO_DAYS(stodate) <= 1";	
+				}else if(time.equals("2")){
+						sql3=" AND TO_DAYS(NOW()) - TO_DAYS(stodate) <= 7";
+				}else{
+						sql3=" AND TO_DAYS(NOW()) - TO_DAYS(stodate) <= 30";
+				}
+				if(!stoamount1.equals("")){
+						sql4=" AND stoamount>="+stoamount1;
+				}
+				if(!stoamount2.equals("")){
+						sql5=" AND stoamount<="+stoamount2;	
+				}
+				sql = new String("SELECT commodity.comname,staff.staname,stodate,stoamount FROM commodity,staff,stock WHERE stock.comno=commodity.comno AND stock.stano=staff.stano"+sql1+sql2+sql3+sql4+sql5);
+			}
+			
 			rs = db.executeQuery(sql, params);
 			if(rs.next()){
 				status = true;

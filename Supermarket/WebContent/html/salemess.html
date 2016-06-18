@@ -10,6 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/datepicker.css"/>
     <link rel="stylesheet" type="text/css" href="../css/staffmess.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../ajax/salemess.js"></script>
 </head>
 <body>
 
@@ -65,7 +67,7 @@
 	      	<div class="controls2">
 				<div class="title6">
 	            商品编号：
-				<input type="text" name="id_comno" placeholder="如：001">
+				<input type="text" name="id_comno" id="comno" placeholder="如：001">
 				</div>
 			</div>
 	      </li>
@@ -90,7 +92,7 @@
 	      	<div class="controls2">
 				<div class="title6">
 	            出售数量：
-				<input type="text" name="id_saleamount" placeholder="如：13">
+				<input type="text" name="id_saleamount" id="saleamount" placeholder="如：13">
 				</div>
 			</div>
 	       </li>
@@ -101,7 +103,7 @@
 	      </li>-->
 		</ul>
         <div class="title6">
-        <input type="button" class="button" name="sure" value="登记">
+        <input type="button" class="button" name="sure" id="record" value="登记">
         </div>
 	</div>	
 	</li>
@@ -117,20 +119,20 @@
 			</div>
 			<div class="allsearch">
 				<div class="controls2 title1">
-					<input type="text" name="id_comname" placeholder="如：雨伞">
+					<input type="text" name="id_saleno" id="saleno" placeholder="如：001">
 				</div>
 
 				<div class="controls2 title2">
-					<input type="text" name="id_comno" placeholder="如：001">
+					<input type="text" name="id_comno" id="salecomno" placeholder="如：001">
 				</div>
 
 				<div class="controls2 title3">
-		            <select name="id_sortno">
-                    <option>请选择</option>
-		      		<option>小吃</option>
-		      		<option>家具</option>
-		      		<option>衣物</option>
-		      		<option>玩具</option></select>
+		            <select name="id_sortno" id="salesortno">
+                    <option value="0">请选择</option>
+		      		<option value="1">小吃</option>
+		      		<option value="2">家具</option>
+		      		<option value="3">衣物</option>
+		      		<option value="4">玩具</option></select>
 		   		 </div>
 		    
 		    	<div class="controls2 title4">
@@ -152,10 +154,10 @@
 			    	<!--<input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">-->
 				</form>
 		        <form class="uk-form">
-			        <input type="checkbox" value="全部记录">
+			        <input type="checkbox" id="saleall" value="全部记录">
 			        <span>全部商品</span>
 		      	</form> 
-		    	<input type="button" class="button" name="sure" value="查询">
+		    	<input type="button" class="button" name="sure" id="saleseek" value="查询" onclick="createparameter()">
 		    </div>
 	    </div>
 	    <!--输出查询结果-->

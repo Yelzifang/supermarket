@@ -47,13 +47,13 @@ public class StaffAlter extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String username = "hzk";//request.getParameter("account");
-		String password = "123";//request.getParameter("pwd");
+		String stano = "5";//request.getParameter("stano");
+		String pwd = "";//request.getParameter("pwd");
 		String name = "huazhka";//request.getParameter("name");
 		String sex = "2";//request.getParameter("sex");
-		String tele = "15016066772";//request.getParameter("tele");
+		String tele = "";//request.getParameter("tele");
 		String birthday = "1993-06-14";//request.getParameter("birthday");
-		String params[] = new String[]{password,name,sex,tele,birthday,username};
+		String params[] = new String[]{sex,stano};
 		
 		DBO db = new DBO();
 		int n = 0;
@@ -68,8 +68,37 @@ public class StaffAlter extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			
-		sql = new String("UPDATE staff SET pwd=?,staname=?,sex=?,tele=?,birthday=? WHERE account=?");
+			String sql1="",sql2="",sql3="",sql4="";
+			Boolean j = false;
+			if(!pwd.equals("")){	
+				sql1 = " pwd='"+pwd+"'";
+				j = true;
+			}
+			if(!name.equals("")){
+				if(j){
+					sql2 = " ,staname='"+name+"'";
+				}else{
+					sql2 = " staname='"+name+"'";
+					j = true;
+				}
+			}
+			if(!tele.equals("")){
+				if(j){
+					sql3 = " ,tele='"+tele+"'";
+				}else{
+					sql3 = " tele='"+tele+"'";
+					j = true;
+				}
+			}
+			if(!birthday.equals("")){
+				if(j){
+					sql4 = " ,birthday='"+birthday+"'";
+				}else{
+					sql4 = " birthday='"+birthday+"'";
+					j = true;
+				}
+			}
+		sql = new String("UPDATE staff SET"+sql1+sql2+sql3+sql4+" ,sex=? WHERE stano=?");
 		n = db.executeUpdate(sql, params);
 		if(n!=0){
 			status = true;
