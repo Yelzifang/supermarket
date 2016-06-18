@@ -28,6 +28,8 @@
 <a href="StaffDelete">员工信息删除</a><br/>
 <a href="StaffInsert">员工信息插入</a><br/>
 <a href="InsertCom">商品信息插入</a><br/>
+<a href="AlterCom">商品信息修改</a><br/>
+<a href="SearchCom">商品信息查询</a><br/>
 <a href="ShowCom">商品信息展示</a><br/>
 <a href="DeleteCom">商品信息展示</a><br/>
 <a href="AlterCom">商品信息修改</a><br/>
@@ -38,6 +40,6 @@
 <a href="InsertStock">进货</a><br/>
 <a href="ShowStock">查询进货信息</a><br/>
 <a href="InsertRestock">退货</a><br/>
-<a href="ShowRestock">查询进货信息</a><br/>
+<a href="ShowRestock">查询退货信息</a><br/>
 </body>
 </html>

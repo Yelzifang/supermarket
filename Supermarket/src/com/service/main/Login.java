@@ -74,6 +74,10 @@ public class Login extends HttpServlet {
 		if(rs.next()){
 			status = true;
 			detail = new String("登陆成功！");
+			session.setAttribute("stano", rs.getInt(1));
+			session.setAttribute("account", username);
+			session.setAttribute("pwd", password);
+			session.setAttribute("identity", identity);
 		}else{
 			detail = new String("账号或者密码错误！");
 		}

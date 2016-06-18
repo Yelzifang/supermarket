@@ -47,15 +47,16 @@ public class InsertSale extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		String stano = "3";//(String)session.getAttribute("stano");
-		String comno = "6";//request.getParameter("comno");
+		String comno = request.getParameter("comno");
 		Date currDate = (Date) Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateTime = sdf.format(currDate);
-		String saleamout = "500";//request.getParameter("saleamout");
+		String saleamout = request.getParameter("saleamount");
 		
 		String params[] = new String[]{comno,stano,dateTime,"1",saleamout};
 		
@@ -75,9 +76,9 @@ public class InsertSale extends HttpServlet {
 			n = db.executeUpdate(sql, params);
 			if(n!=0){
 				status = true;
-				detail = new String("插入成功！");
+				detail = new String("登记成功！");
 			}else{
-				detail = new String("插入失败！");
+				detail = new String("登记失败！");
 			}
 			json.put("status", status);
 			json.put("detail", detail);

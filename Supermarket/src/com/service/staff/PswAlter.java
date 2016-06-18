@@ -44,12 +44,14 @@ public class PswAlter extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String account = request.getParameter("account");
-		String password = request.getParameter("password");
-		
+		String account = "hzk";//session.getAttribute("account");
+		String pwd = "123";//session.getAttribute("pwd");
+		String oldpassword = request.getParameter("oldpwd");
+		String password = request.getParameter("newpwd");
 		String params[] = new String[]{password,account};
 		
 		DBO db = new DBO();
@@ -65,15 +67,18 @@ public class PswAlter extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
+		if(!pwd.equals(oldpassword)){
+			detail = new String("密码错误！");
+		}else{	
+			sql = new String("UPDATE staff SET pwd=? WHERE account=?");
+			n = db.executeUpdate(sql, params);
+			if(n!=0){
+				status = true;
+				detail = new String("修改密码成功！");
 			
-		sql = new String("UPDATE staff SET pwd=? WHERE account=?");
-		n = db.executeUpdate(sql, params);
-		if(n!=0){
-			status = true;
-			detail = new String("修改密码成功！");
-			
-		}else{
-			detail = new String("修改密码失败！");
+			}else{
+				detail = new String("修改密码失败！");
+			}
 		}
 		json.put("status", status);
 		json.put("detail", detail);

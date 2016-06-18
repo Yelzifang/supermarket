@@ -9,6 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/staffmess.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../ajax/staffself.js"></script>
 </head>
 <body>
 
@@ -59,11 +61,11 @@
 	<li>    
 	<div class="staffmessage" id="iDBody1">
 		<ul>
-      <li>我的编号：<label for="id_stano">001</label></li>
-  	  <li>我的姓名：<label for="id_staname">黄志康</label></li>
-  	  <li>我的性别：<label for="id_sex">男</label></li>
- 	  <li>电话号码：<label for="id_tele">66666666666</label></li>
-  	  <li>出生年月：<label for="id_birthday">1988-1-1</label></li>
+      <li>我的编号：<label for="id_stano" id="stano">001</label></li>
+  	  <li>我的姓名：<label for="id_staname" id="staname">黄志康</label></li>
+  	  <li>我的性别：<label for="id_sex" id="sex">男</label></li>
+ 	  <li>电话号码：<label for="id_tele" id="tele">66666666666</label></li>
+  	  <li>出生年月：<label for="id_birthday" id="birthday">1988-1-1</label></li>
 		</ul>
 	</div>
 	</li>
@@ -71,12 +73,12 @@
 	<div class="changekey" id="iDBody2">
     	<ul class="changepwd">		
 		<li>我的帐号：<label for="id_account">huangzhikang</label></li>
-		<li><form>
-    	原用密码：<input type="password" name="id_pwd1"><br>
-    	修改密码：<input type="password" name="id_pwd2"><br>
-   		<input type="submit" class="button" value="确定" onclick="sure_print()">
+		<li>
+    	原用密码：<input type="password" name="id_pwd1" id="oldpassword"><br>
+    	修改密码：<input type="password" name="id_pwd2" id="newpassword"><br>
+   		<input type="submit" class="button" id="alterpwd" value="确定" >
     	<input type="reset" class="button"  value="重置">
-    	</form></li>
+    	</li>
         </ul>
 	</div>
     </li>

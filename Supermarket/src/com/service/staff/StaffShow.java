@@ -41,8 +41,12 @@ public class StaffShow extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String username = "1";//(String)session.getAttribute("account");
-		String password = "123";//(String)session.getAttribute("pwd");
+		String username = "fzb";//session.getAttribute("account");
+		String password = "123";//session.getAttribute("pwd");
+		String all = "true";//request.getParameter("all");
+		String stano = "1";//request.getParameter("stano");
+		String account = "fzb";//request.getParameter("account");
+		String name = "%冯志宝%";//request.getParameter("name");
 		
 		String params[] = new String[]{};
 		
@@ -60,7 +64,15 @@ public class StaffShow extends HttpServlet {
 				System.out.println("连接成功！");
 			}
 		if(username!=null&&password!=null){
-			sql = new String("SELECT * FROM staff WHERE identity=2");
+			if(all.equals("true")){
+				sql = new String("SELECT * FROM staff WHERE identity=2");
+			}else if(!stano.equals("")){
+				sql = new String("SELECT * FROM staff WHERE identity=2 AND stano="+stano);
+			}else if(!account.equals("")){
+				sql = new String("SELECT * FROM staff WHERE identity=2 AND account='"+account+"'");
+			}else if(!name.equals("%%")){
+				sql = new String("SELECT * FROM staff WHERE identity=2 AND name LIKE '"+name+"'");
+			}
 			rs = db.executeQuery(sql, params);
 			if(rs.next()){
 				status = true;

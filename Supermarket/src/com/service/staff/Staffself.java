@@ -70,7 +70,7 @@ public class Staffself extends HttpServlet {
 			js.put("name", rs.getString(4));
 			js.put("sex", rs.getInt(5));
 			js.put("tele", rs.getString(6));
-			js.put("birthday", rs.getString(8));
+			js.put("birthday", rs.getDate(8).toString());
 		}else{
 			detail = new String("账号或者密码错误！");
 		}
