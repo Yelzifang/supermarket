@@ -1,73 +1,14 @@
-/*
 
-    Template Author : pixelhint.com
-    Author Email    : contact@pixelhint.com
-    Template Name   : Magnetic
-    
-    
-    *****************************************
-    
-    
-    - Fonts
-    - General CSS
-    - Header
-    - Home/portfolio 
-    - Inner page 
-    - Map/Contact page  
-    - Tooltip 
-    - Responsive code
-  
-    
-*/
 
 body,header,main,mainstaff{margin:0;padding:0;}
 
 /*  Fonts  */
-@font-face {
-    font-family: 'raleway-regular';
-    src: url('../fonts/raleway-regular.eot');
-    src: url('../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-regular.woff') format('woff'),
-         url('../fonts/raleway-regular.ttf') format('truetype'),
-         url('../fonts/raleway-regular.svg#ralewayregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-@font-face {
-    font-family: 'raleway-bold';
-    src: url('../fonts/raleway-bold.eot');
-    src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-bold.woff') format('woff'),
-         url('../fonts/raleway-bold.ttf') format('truetype'),
-         url('../fonts/raleway-bold.svg#ralewaybold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-@font-face {
-    font-family: 'raleway-semibold';
-    src: url('../fonts/raleway-semibold.eot');
-    src: url('../fonts/raleway-semibold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-semibold.woff') format('woff'),
-         url('../fonts/raleway-semibold.ttf') format('truetype'),
-         url('../fonts/raleway-semibold.svg#ralewaysemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
 
 /*  General CSS*/
+
 body{
 	background:#7BBCF4;
 }
-
 header ul.social li a,
 .main .work a .caption,
 header nav ul li a{
@@ -269,7 +210,7 @@ h5, h6          { font-weight: bolder }
 
 
 /*  Main  */
-.main{
+/*.main{
     width: 100%;
     height: 100%;
     padding-left: 300px;
@@ -280,7 +221,7 @@ h5, h6          { font-weight: bolder }
     z-index: 55;
     background: #f6f6f6;
     clear: both;
-}
+}*/
 .h1, h2, h3, h4, h5, h6 {
     font-weight: bolder;
     color: white;
@@ -295,7 +236,7 @@ h5, h6          { font-weight: bolder }
 }
 
 /*  Home/portfolio  */
-.main .work{
+/*.main .work{
     display: block;
     width: 33.33333333333333%;
     height: auto;
@@ -348,7 +289,7 @@ h5, h6          { font-weight: bolder }
     border-bottom: 1px solid #bfbbbb;
     border-top: 1px solid #bfbbbb;
 }
-
+*/
 
 
 
@@ -356,7 +297,7 @@ h5, h6          { font-weight: bolder }
 
 
 /*  Inner Page  */
-.top{
+/*.top{
     width: 100%;
     height: 350px;
     overflow: hidden;
@@ -472,7 +413,7 @@ h5, h6          { font-weight: bolder }
     line-height: 28px;
     margin-bottom: 30px;
 
-}
+}*/
 
 
 
@@ -481,7 +422,7 @@ h5, h6          { font-weight: bolder }
 
 
 /*  Contact page map  */
-#map .map_adresse{
+/*#map .map_adresse{
     font-family: 'raleway-regular', arial;
     font-size: 14px;
     line-height: 22px;
@@ -501,7 +442,7 @@ h5, h6          { font-weight: bolder }
 
 #map img{
     max-width: none;
-}
+}*/
 
 
 
@@ -510,7 +451,7 @@ h5, h6          { font-weight: bolder }
 
 
 /*  Tooltip  */
-.tooltip{
+/*.tooltip{
     display: block;
     padding: 7px 10px;
     background: #454545;
@@ -541,7 +482,7 @@ h5, h6          { font-weight: bolder }
     margin-left: -3px;
 }
 
-
+*/
 
 
 
