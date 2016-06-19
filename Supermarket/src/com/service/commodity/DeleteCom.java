@@ -1,8 +1,7 @@
-package com.service.staff;
+package com.service.commodity;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -18,16 +17,16 @@ import org.json.JSONObject;
 import com.dao.DBO;
 
 /**
- * Servlet implementation class Staffself
+ * Servlet implementation class DeleteCom
  */
-@WebServlet("/Staffself")
-public class Staffself extends HttpServlet {
+@WebServlet("/DeleteCom")
+public class DeleteCom extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Staffself() {
+    public DeleteCom() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,7 +37,6 @@ public class Staffself extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		this.doPost(request, response);
-		
 	}
 
 	/**
@@ -49,49 +47,35 @@ public class Staffself extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		System.out.println("staffself");
-		String username = (String)session.getAttribute("account");
-		String password = (String)session.getAttribute("pwd");
-		String params[] = new String[]{username,password};
+		String comno = "7";//request.getParameter("comno");
+		
+		String params[] = new String[]{comno};
 		
 		DBO db = new DBO();
-		ResultSet rs = null;
+		int n = 0;
 		String sql = null;
 
 		JSONObject json = new JSONObject();
 		JSONObject js = new JSONObject();
 		Boolean status = false;
 		String detail = null;
-		
 		try {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			
-		sql = new String("SELECT * FROM staff WHERE account=? AND pwd=?");
-		rs = db.executeQuery(sql, params);
-		if(rs.next()){
-			status = true;
-			detail = new String("查新信息成功！");
-		}else{
-			detail = new String("账号或者密码错误！");
-		}
-		rs=db.executeQuery(sql, params);
-		while(rs.next()){
-			js.put("stano", rs.getInt(1));
-			js.put("account", rs.getString(2));
-			js.put("pwd", rs.getString(3));
-			js.put("staname", rs.getString(4));
-			js.put("sex", rs.getInt(5));
-			js.put("tele", rs.getString(6));
-			js.put("birthday", rs.getDate(8).toString());
-		}
-		json.put("status", status);
-		json.put("detail", detail);
-		json.put("message", js);
-		System.out.println(json.toString());
-		out.println(json.toString());
-		db.closeAll();
+			sql = new String("DELETE FROM commodity WHERE comno=?");
+			n = db.executeUpdate(sql, params);
+			if(n!=0){
+				status = true;
+				detail = new String("删除商品成功！");
+			}else{
+				detail = new String("删除商品失败！");
+			}
+			json.put("status", status);
+			json.put("detail", detail);
+			json.put("message", js);
+			out.println(json.toString());
+			db.closeAll();
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException | SQLException | JSONException e) {
 			// TODO Auto-generated catch block

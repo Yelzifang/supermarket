@@ -1,4 +1,4 @@
-package com.service.staff;
+package com.service.sort;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,22 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.dao.DBO;
 
 /**
- * Servlet implementation class Staffself
+ * Servlet implementation class ShowSort
  */
-@WebServlet("/Staffself")
-public class Staffself extends HttpServlet {
+@WebServlet("/ShowSort")
+public class ShowSort extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Staffself() {
+    public ShowSort() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,29 +38,20 @@ public class Staffself extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.doPost(request, response);
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		System.out.println("staffself");
-		String username = (String)session.getAttribute("account");
-		String password = (String)session.getAttribute("pwd");
-		String params[] = new String[]{username,password};
+		String username = "1";//(String)session.getAttribute("account");
+		String password = "123";//(String)session.getAttribute("pwd");
+		
+		String params[] = new String[]{};
 		
 		DBO db = new DBO();
 		ResultSet rs = null;
 		String sql = null;
 
 		JSONObject json = new JSONObject();
-		JSONObject js = new JSONObject();
+		JSONArray js = new JSONArray();
 		Boolean status = false;
 		String detail = null;
 		
@@ -67,29 +59,28 @@ public class Staffself extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			
-		sql = new String("SELECT * FROM staff WHERE account=? AND pwd=?");
-		rs = db.executeQuery(sql, params);
-		if(rs.next()){
-			status = true;
-			detail = new String("查新信息成功！");
+		if(username!=null&&password!=null){
+			sql = new String("SELECT * FROM sort");
+			rs = db.executeQuery(sql, params);
+			if(rs.next()){
+				status = true;
+				detail = new String("查询类别成功！");
+			}else{
+				detail = new String("查询类别失败！");
+			}
+			rs = db.executeQuery(sql, params);
+			while(rs.next()){
+				JSONObject temp = new JSONObject();
+				temp.put("sortno", rs.getInt(1));
+				temp.put("sortname", rs.getString(2));
+				js.put(temp);
+			}
 		}else{
-			detail = new String("账号或者密码错误！");
-		}
-		rs=db.executeQuery(sql, params);
-		while(rs.next()){
-			js.put("stano", rs.getInt(1));
-			js.put("account", rs.getString(2));
-			js.put("pwd", rs.getString(3));
-			js.put("staname", rs.getString(4));
-			js.put("sex", rs.getInt(5));
-			js.put("tele", rs.getString(6));
-			js.put("birthday", rs.getDate(8).toString());
+			detail = new String("请登录！");
 		}
 		json.put("status", status);
 		json.put("detail", detail);
 		json.put("message", js);
-		System.out.println(json.toString());
 		out.println(json.toString());
 		db.closeAll();
 		} catch (ClassNotFoundException | InstantiationException
@@ -97,6 +88,14 @@ public class Staffself extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		this.doGet(request, response);
 	}
 
 }
