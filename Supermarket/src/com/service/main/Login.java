@@ -77,7 +77,11 @@ public class Login extends HttpServlet {
 			session.setAttribute("stano", rs.getInt(1));
 			session.setAttribute("account", username);
 			session.setAttribute("pwd", password);
+			session.setAttribute("staname", rs.getString(4));
+			session.setAttribute("sex", rs.getInt(5));
+			session.setAttribute("tele", rs.getString(6));
 			session.setAttribute("identity", identity);
+			session.setAttribute("birthday",rs.getDate(8).toString());
 		}else{
 			detail = new String("账号或者密码错误！");
 		}
