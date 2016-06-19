@@ -120,13 +120,14 @@ span{
 		float: left;
 	}
 	.title4{
-		width: 150px;
+		width: 130px;
 		float: left;
-		margin-left:10px; 
+		
 	}
 	.title5{
 		width: 100px;
 		float: left;
+		margin-left:10px; 
 	}
 	.title6{
 		width: 200px;
@@ -164,7 +165,6 @@ span{
 }
 .controls2 select{
 	height: 30px;
-	width: 80px;
 	line-height: 30px;
 	font-size: 14px;
 	border-radius: 5px;
@@ -176,7 +176,7 @@ span{
 	-ms-transition:0.5s all;
 }
 .title4 input[type="text"]{
-	margin-left: 10px;
+/*	margin-left: 10px;*/
 	width: 35px;
 	height: 28px;
 	border-radius: 5px;
@@ -188,7 +188,7 @@ span{
 	-ms-transition:0.5s all;
 }
 .title5 input[type="button"]{
-	margin-left: 40px;
+/*	margin-left: 40px;*/
 }
 .title6 input[type="button"]{
 	margin-top:20px;
