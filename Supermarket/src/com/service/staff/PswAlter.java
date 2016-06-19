@@ -36,7 +36,6 @@ public class PswAlter extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.doPost(request, response);
 	}
 
 	/**
@@ -48,10 +47,12 @@ public class PswAlter extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String account = "hzk";//session.getAttribute("account");
-		String pwd = "123";//session.getAttribute("pwd");
+		String account = (String)session.getAttribute("account");
+		String pwd = (String)session.getAttribute("pwd");
 		String oldpassword = request.getParameter("oldpwd");
 		String password = request.getParameter("newpwd");
+		System.out.println("nidaye");
+		System.out.println(oldpassword);
 		String params[] = new String[]{password,account};
 		
 		DBO db = new DBO();
